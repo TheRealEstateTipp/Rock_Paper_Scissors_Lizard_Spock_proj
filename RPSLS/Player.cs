@@ -12,7 +12,11 @@ namespace RPSLS
     {
         //Member Variables
         public string PlayerName;
-        public List<string> Gesture = new List<string>{ ("Rock"), ("Paper"), ("Scissor"), ("Lizard"), ("Spock") };
+        public List<string> Gestures = new List<string>{ ("Rock"), ("Paper"), ("Scissor"), ("Lizard"), ("Spock") };
+        public string gesture;
+        public int score;
+
+
 
 
         
