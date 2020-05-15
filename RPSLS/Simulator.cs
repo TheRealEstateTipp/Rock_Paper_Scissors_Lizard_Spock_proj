@@ -13,7 +13,8 @@ namespace RPSLS
         public Player playerTwo;
         public string numberofPlayers;
         public string rules;
-        public string roundWinner;
+        
+        
         
 
 
@@ -34,6 +35,9 @@ namespace RPSLS
             CreatePlayer(numberofPlayers);
             playerOne.Gestures();
             playerTwo.Gestures();
+            CompareGestures();
+            Rematch();
+            DisplayWinner();
             
             
         }
@@ -71,7 +75,7 @@ namespace RPSLS
             }
 
          }
-        public void CompareGestures() 
+        public void CompareGestures()
         {
             if (playerOne.gesture == "Rock" && playerTwo.gesture == "Scissors")
             {
@@ -135,8 +139,43 @@ namespace RPSLS
                 Console.WriteLine("Player Two Wins!");
             }
 
-        
+        } 
+        public void Rematch()
+        {
+            bool rematch = true;
+            while (playerOne.score < 3 && playerTwo.score < 3)
+            {
+                if (rematch == true)
+                {
+                    CompareGestures();
+                    Console.WriteLine("Let's Play Next Round");
+                }
+                else
+                {
+                    Console.WriteLine("We Have a Winner!");
+                }
+                
+                
 
+            }
+        
+        }
+        public void DisplayWinner()
+        {
+            if (playerOne.score == 3)
+            {
+                Console.WriteLine("Our winner is" + playerOne);
+            }
+            else
+            {
+                Console.WriteLine("Our winnder is" + playerTwo);
+            }
+
+        }
+        
+       
+
+        
 
 
 
