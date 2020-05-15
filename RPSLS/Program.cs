@@ -10,6 +10,10 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
+            Simulator simulator = new Simulator();
+            simulator.RunSimulator();
+
         }
+
     }
 }

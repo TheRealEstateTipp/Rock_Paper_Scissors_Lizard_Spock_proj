@@ -12,7 +12,7 @@ namespace RPSLS
         public Player playerOne;
         public Player playerTwo;
         public string numberofPlayers;
-        public string rules;
+        
         
         
         
@@ -30,20 +30,26 @@ namespace RPSLS
         public void RunSimulator() 
         
         {
-            string rules = GameRules();
+            GameRules();
             string numberofPlayers = GetNumberofPlayers();
             CreatePlayer(numberofPlayers);
-            playerOne.Gestures();
-            playerTwo.Gestures();
-            CompareGestures();
-            Rematch();
-            DisplayWinner();
+
+            while (playerOne.score < 3 && playerTwo.score < 3)
+            {
+                playerOne.Gestures();
+                playerTwo.Gestures();
+                CompareGestures();
+            }
+
             
+            
+            DisplayWinner();
+            Rematch();
             
         }
 
 
-        public string GameRules()
+        public void GameRules()
         {
             Console.WriteLine("Welcome to RPSLS! Here are the rules: Rock crushes Scissors, Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons Spock, Spock smashes Scissors," +
                 "Scissors decapitates Lizard, Lizard eats Paper, Paper disproves Spock, Spock vaporizes Rock");
@@ -142,24 +148,18 @@ namespace RPSLS
         } 
         public void Rematch()
         {
-            bool rematch = true;
-            while (playerOne.score < 3 && playerTwo.score < 3)
-            {
-                if (rematch == true)
-                {
-                    CompareGestures();
-                    Console.WriteLine("Let's Play Next Round");
-                }
-                else
-                {
-                    Console.WriteLine("We Have a Winner!");
-                }
-                
-                
+            Console.WriteLine("Would You Like to Play Again?");
+            string input = Console.ReadLine();
 
+            if (input == "Yes")
+            {
+                RunSimulator();
             }
-        
-        }
+            else
+            {
+                Console.WriteLine("Thank you for playing RPSLS!");
+            }
+         }
         public void DisplayWinner()
         {
             if (playerOne.score == 3)
