@@ -20,6 +20,7 @@ namespace RPSLS
         {
             int index = random.Next(listofgestures.Count);
             Console.WriteLine(listofgestures[index]);
+            gesture = listofgestures[index];
 
         }
     }

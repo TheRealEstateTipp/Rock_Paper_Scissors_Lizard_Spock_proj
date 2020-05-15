@@ -32,6 +32,7 @@ namespace RPSLS
             CreatePlayer(numberofPlayers);
             playerOne.Gestures();
             playerTwo.Gestures();
+            playerTwo.
         }
 
 
@@ -66,7 +67,63 @@ namespace RPSLS
             }
 
          }
-        
+        public void CompareGestures() 
+        {
+            if (playerOne.gesture == "Rock" && playerTwo.gesture == "Scissors")
+            {
+                playerOne.score++;
+            }
+
+            else if (playerOne.gesture == "Scissors" && playerTwo.gesture == "Paper")
+            {
+                playerOne.score++;
+            }
+
+            else if (playerOne.gesture == "Paper" && playerTwo.gesture == "Rock")
+            {
+                playerOne.score++;
+            }
+            else if (playerOne.gesture == "Rock" && playerTwo.gesture == "Lizard")
+            {
+                playerOne.score++;
+            }
+            else if (playerOne.gesture == "Lizard" && playerTwo.gesture == "Spock")
+            {
+                playerOne.score++;
+            }
+            else if (playerOne.gesture == "Spock" && playerTwo.gesture == "Scissors")
+            {
+                playerOne.score++;
+            }
+            else if (playerOne.gesture == "Scissors" && playerTwo.gesture == "Lizard")
+            {
+                playerOne.score++;
+            }
+            else if (playerOne.gesture == "Lizard" && playerTwo.gesture == "Paper")
+            {
+                playerOne.score++;
+            }
+            else if (playerOne.gesture == "Paper" && playerTwo.gesture == "Spock")
+            {
+                playerOne.score++;
+            }
+            else if (playerOne.gesture == "Spock" && playerTwo.gesture == "Rock")
+            {
+                playerOne.score++;
+            }
+            else if (playerOne.gesture == playerTwo.gesture)
+            {
+                Console.WriteLine("This Round is Tied!");
+            }
+            else
+            {
+                playerTwo.score++;
+            }
+
+        }
+
+
+
 
     }
 
