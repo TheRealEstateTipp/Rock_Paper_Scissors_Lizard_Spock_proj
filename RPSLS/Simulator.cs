@@ -13,6 +13,8 @@ namespace RPSLS
         public Player playerTwo;
         public string numberofPlayers;
         public string rules;
+        public string roundWinner;
+        
 
 
         //1. What are the rules?
@@ -32,7 +34,8 @@ namespace RPSLS
             CreatePlayer(numberofPlayers);
             playerOne.Gestures();
             playerTwo.Gestures();
-            playerTwo.
+            
+            
         }
 
 
@@ -40,6 +43,7 @@ namespace RPSLS
         {
             Console.WriteLine("Welcome to RPSLS! Here are the rules: Rock crushes Scissors, Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons Spock, Spock smashes Scissors," +
                 "Scissors decapitates Lizard, Lizard eats Paper, Paper disproves Spock, Spock vaporizes Rock");
+  
         }
 
         public string GetNumberofPlayers()
@@ -72,44 +76,54 @@ namespace RPSLS
             if (playerOne.gesture == "Rock" && playerTwo.gesture == "Scissors")
             {
                 playerOne.score++;
+                Console.WriteLine("Player One Wins!");
             }
 
             else if (playerOne.gesture == "Scissors" && playerTwo.gesture == "Paper")
             {
                 playerOne.score++;
+                Console.WriteLine("Player One Wins!");
             }
 
             else if (playerOne.gesture == "Paper" && playerTwo.gesture == "Rock")
             {
                 playerOne.score++;
+                Console.WriteLine("Player One Wins!");
             }
             else if (playerOne.gesture == "Rock" && playerTwo.gesture == "Lizard")
             {
                 playerOne.score++;
+                Console.WriteLine("Player One Wins!");
             }
             else if (playerOne.gesture == "Lizard" && playerTwo.gesture == "Spock")
             {
                 playerOne.score++;
+                Console.WriteLine("Player One Wins!");
             }
             else if (playerOne.gesture == "Spock" && playerTwo.gesture == "Scissors")
             {
                 playerOne.score++;
+                Console.WriteLine("Player One Wins!");
             }
             else if (playerOne.gesture == "Scissors" && playerTwo.gesture == "Lizard")
             {
                 playerOne.score++;
+                Console.WriteLine("Player One Wins!");
             }
             else if (playerOne.gesture == "Lizard" && playerTwo.gesture == "Paper")
             {
                 playerOne.score++;
+                Console.WriteLine("Player One Wins!");
             }
             else if (playerOne.gesture == "Paper" && playerTwo.gesture == "Spock")
             {
                 playerOne.score++;
+                Console.WriteLine("Player One Wins!");
             }
             else if (playerOne.gesture == "Spock" && playerTwo.gesture == "Rock")
             {
                 playerOne.score++;
+                Console.WriteLine("Player One Wins!");
             }
             else if (playerOne.gesture == playerTwo.gesture)
             {
@@ -118,9 +132,10 @@ namespace RPSLS
             else
             {
                 playerTwo.score++;
+                Console.WriteLine("Player Two Wins!");
             }
 
-        }
+        
 
 
 
